@@ -26,13 +26,7 @@ const questions = [
     type: "input",
     name: "description",
     message: "Describe your project.",
-    default: "Description",
-  },
-  {
-    type: "input",
-    name: "contents",
-    message: "What are the contents of your project?",
-    default: "none",
+    default: "Description of the project",
   },
   {
     type: "input",
@@ -50,7 +44,7 @@ const questions = [
     type: "input",
     name: "credits",
     message: "Who else worked on this project?",
-    default: "''",
+    default: "Just me :)",
   },
   {
     type: "list",
@@ -95,7 +89,7 @@ function init() {
     })
     .catch((error) => {
       if (error.isTtyError) {
-        console.error("Prompt couldn't be rendered in the current environment");
+        console.error("Could not load Prompt!");
       } else {
         console.error(error);
       }

@@ -1,4 +1,4 @@
-const index = require('../index.js');
+const index = require("../index.js");
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
@@ -17,8 +17,7 @@ function renderLicenseBadge(license) {
     default:
       return "";
   }
-};
-
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -39,55 +38,66 @@ function renderLicenseLink(license) {
   }
 }
 
-
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  
-}
+  if (license === "none") {
+    return "";
+  } else {
+    return `## License
 
+  licensed for use by:
+  ${renderLicenseBadge(license)}
+
+  ${renderLicenseLink(license)}
+`;
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  
   return `# ${data.project}
     
-    ${renderLicenseBadge(data.license)}
+${renderLicenseBadge(data.license)}
 
-    ## Description
+## Description
     
-    ${data.description}
+${data.description}
 
-    ## Table of Contents
+## Table of Contents
     
-    ${data.contents}
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Credits](#credits)
+* [Contact](#contact)
 
-    ## Installation
+## Installation
     
-    To use program please run:
-    ${data.installation}
+To use program please run:
+
+\`\`\`
+${data.installation}
+\`\`\`
      
-    ## Usage
+## Usage
     
-    ${data.usage}
+${data.usage}
 
-    ## Credits
+${renderLicenseSection(data.license)}
+
+## Credits
     
-    Made with support from: 
-    ${data.credits}
+Made with support from: 
+${data.credits}
 
-    ## License
-    
-    Licensed for use by:
-    ${data.license}
+## Contact
 
-    ## Contact
+View my other work:
+[${data.github}](https://github.com/${data.github}/)
 
-    View my other work:
-    [${data.github}](https://github.com/${data.github}/)
-
-    Message me at:
-    ${data.contact}
+Message me at:
+${data.contact}
 `;
 }
 
