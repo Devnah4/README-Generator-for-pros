@@ -7,6 +7,17 @@ const generateMarkdown = require("./utils/generateMarkdown.js");
 const questions = [
   {
     type: "input",
+    name: "github",
+    message: "What is your GitHub username?",
+  },
+  {
+    type: "input",
+    name: "contact",
+    message: "What's a good way to reach you?",
+    default: "None Available",
+  },
+  {
+    type: "input",
     name: "project",
     message: "What is your project named?",
     default: "Project Title",
@@ -27,13 +38,13 @@ const questions = [
     type: "input",
     name: "installation",
     message: "What system needs to be installed?",
-    default: 'none'
+    default: "none",
   },
   {
     type: "input",
     name: "usage",
     message: "Any Instructions?",
-    deafult: 'none',
+    deafult: "none",
   },
   {
     type: "input",
@@ -57,27 +68,30 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  return fs.writeFile('./README.md', generateMarkdown.data, (error) => {
+  return fs.writeFile(fileName, data, (error) => {
     if (error) {
       throw error;
     } else {
       console.log("Successfully wrote to file!");
     }
   });
-}
+};
 
 // TODO: Create a function to initialize app
 function init() {
   inquirer
     .prompt(questions)
-    .then((response) => {
-      console.log(`The name of the project is ${response.project}`);
-      console.log(`The user's response is: ${response.description}`);
-      console.log(`The user's response is: ${response.contents}`);
-      console.log(`The user's response is: ${response.installation}`);
-      console.log(`The user's response is: ${response.usage}`);
-      console.log(`The user's response is: ${response.credits}`);
-      console.log(`The user's response is: ${response.license}`);
+    .then((data) => {
+      console.log(`github name: ${data.github}`)
+      console.log(`contact info is: ${data.contact}`)
+      console.log(`Project name is: ${data.project}`);
+      console.log(`Description: ${data.description}`);
+      console.log(`Contents: ${data.contents}`);
+      console.log(`installation: ${data.installation}`);
+      console.log(`usage: ${data.usage}`);
+      console.log(`credits: ${data.credits}`);
+      console.log(`license: ${data.license}`);
+      return writeToFile('./utils/README.md', generateMarkdown(data));
     })
     .catch((error) => {
       if (error.isTtyError) {

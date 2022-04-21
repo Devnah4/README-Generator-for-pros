@@ -1,3 +1,5 @@
+const index = require('../index.js');
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
@@ -53,25 +55,40 @@ function generateMarkdown(data) {
     ${renderLicenseBadge(data.license)}
 
     ## Description
+    
     ${data.description}
 
     ## Table of Contents
+    
     ${data.contents}
 
-    ## Installation 
+    ## Installation
+    
+    To use program please run:
     ${data.installation}
-
+     
     ## Usage
+    
     ${data.usage}
 
     ## Credits
+    
+    Made with support from: 
     ${data.credits}
 
     ## License
-    ${data.license}
     
+    Licensed for use by:
+    ${data.license}
+
+    ## Contact
+
+    View my other work:
+    [${data.github}](https://github.com/${data.github}/)
+
+    Message me at:
+    ${data.contact}
 `;
 }
 
-console.log(generateMarkdown())
 module.exports = generateMarkdown;
