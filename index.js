@@ -9,31 +9,37 @@ const questions = [
     type: "input",
     name: "project",
     message: "What is your project named?",
+    default: "Project Title",
   },
   {
     type: "input",
     name: "description",
     message: "Describe your project.",
+    default: "Description",
   },
   {
     type: "input",
     name: "contents",
     message: "What are the contents of your project?",
+    default: "none",
   },
   {
     type: "input",
     name: "installation",
     message: "What system needs to be installed?",
+    default: 'none'
   },
   {
     type: "input",
     name: "usage",
     message: "Any Instructions?",
+    deafult: 'none',
   },
   {
     type: "input",
     name: "credits",
     message: "Who else worked on this project?",
+    default: "''",
   },
   {
     type: "list",
@@ -51,11 +57,11 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile('./README.md', generateMarkdown.data, (error) => {
+  return fs.writeFile('./README.md', generateMarkdown.data, (error) => {
     if (error) {
       throw error;
     } else {
-      console.log("Successfully wrote to file");
+      console.log("Successfully wrote to file!");
     }
   });
 }
@@ -65,7 +71,6 @@ function init() {
   inquirer
     .prompt(questions)
     .then((response) => {
-      console.log(`The user's response is: ${response}`);
       console.log(`The name of the project is ${response.project}`);
       console.log(`The user's response is: ${response.description}`);
       console.log(`The user's response is: ${response.contents}`);
@@ -84,4 +89,4 @@ function init() {
 }
 
 // Function call to initialize app
-init(writeToFile);
+init();
