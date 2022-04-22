@@ -18,8 +18,12 @@ Requires [NODE.js](https://nodejs.org/en/)
 
 ## Credits
 
-Forked from [Coding Bootcamp](https://github.com/coding-boot-camp)
-Uses [Node.js](https://nodejs.org/en/)
+- Forked from [Coding Bootcamp](https://github.com/coding-boot-camp)
+- Uses [Node.js](https://nodejs.org/en/)
+
+## How to use
+Click link to see a video run through
+[![Link to a test video](https://user-images.githubusercontent.com/98830462/164582435-f27d91a8-8d01-476b-b54d-e5ef5dd1aded.jpg)](https://www.youtube.com/watch?v=ND7LVlr3UkE)
 
 ## License
 
