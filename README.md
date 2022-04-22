@@ -23,4 +23,4 @@ Uses [Node.js](https://nodejs.org/en/)
 
 ## License
 
-Free Use Bro
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
