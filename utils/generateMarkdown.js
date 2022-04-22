@@ -46,10 +46,7 @@ function renderLicenseSection(license) {
   } else {
     return `## License
 
-  licensed for use by:
-  ${renderLicenseBadge(license)}
-
-  ${renderLicenseLink(license)}
+  licensed for use by: ${renderLicenseLink(license)}
 `;
   }
 }
@@ -70,7 +67,8 @@ ${data.description}
 * [Usage](#usage)
 * [License](#license)
 * [Credits](#credits)
-* [Contact](#contact)
+* [Tests](#test)
+* [Questions](#Questions)
 
 ## Installation
     
@@ -91,7 +89,12 @@ ${renderLicenseSection(data.license)}
 Made with support from: 
 ${data.credits}
 
-## Contact
+## Tests
+
+How to run tests:
+${data.usage}
+
+## Questions
 
 View my other work:
 [${data.github}](https://github.com/${data.github}/)

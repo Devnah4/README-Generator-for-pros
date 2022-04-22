@@ -12,7 +12,8 @@ Description of the project
 * [Usage](#usage)
 * [License](#license)
 * [Credits](#credits)
-* [Contact](#contact)
+* [Tests](#test)
+* [Questions](#Questions)
 
 ## Installation
     
@@ -24,14 +25,11 @@ none
      
 ## Usage
     
-run in command
+None
 
 ## License
 
-  licensed for use by:
-  [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
-
-  [Apache License 2.0](https://opensource.org/licenses/Apache-2.0)
+  licensed for use by: [Apache License 2.0](https://opensource.org/licenses/Apache-2.0)
 
 
 ## Credits
@@ -39,7 +37,12 @@ run in command
 Made with support from: 
 Just me :)
 
-## Contact
+## Tests
+
+How to run tests:
+None
+
+## Questions
 
 View my other work:
 [Devnah4](https://github.com/Devnah4/)

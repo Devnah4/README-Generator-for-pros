@@ -37,7 +37,7 @@ const questions = [
   {
     type: "input",
     name: "usage",
-    message: "Any Instructions?",
+    message: "Does anything need to be ran?",
     deafult: "none",
   },
   {
@@ -45,6 +45,12 @@ const questions = [
     name: "credits",
     message: "Who else worked on this project?",
     default: "Just me :)",
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "How do you use this project?",
+    default: "None",
   },
   {
     type: "list",
